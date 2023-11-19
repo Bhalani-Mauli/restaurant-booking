@@ -1,0 +1,106 @@
+<div class="mt-5">
+  <h2>Create a restaurant</h2>
+
+  <form action="/restaurants/create" method="post">
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input
+        type="name"
+        class="form-control"
+        id="nameInput"
+        name="name"
+        aria-describedby="emailHelp"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="emailInput" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="emailInput"
+        required
+      />
+
+    </div>
+    <div class="mb-3">
+      <label for="streetInput" class="form-label">Street</label>
+      <input
+        type="text"
+        class="form-control"
+        name="street"
+        id="streetInput"
+        required
+      />
+
+    </div>
+    <div class="mb-3">
+      <label for="pincodeInput" class="form-label">Pincode</label>
+      <input
+        type="number"
+        class="form-control"
+        name="pincode"
+        id="pincodeInput"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="cityInput" class="form-label">City</label>
+      <input
+        type="text"
+        class="form-control"
+        name="city"
+        id="cityInput"
+        required
+      />
+
+    </div>
+    <div class="mb-3">
+      <label for="ratingInput" class="form-label">Rating</label>
+      <input
+        type="number"
+        class="form-control"
+        name="rating"
+        id="ratingInput"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="cuisine" class="form-label">Type of Cuisine</label>
+      <select
+        class="form-select"
+        name="typeOfCuisine"
+        aria-label="Select Type of Cuisine"
+        required
+      >
+        <option selected>Select Type of Cuisine</option>
+        <option value="indian">Indian</option>
+        <option value="german">German</option>
+        <option value="italian">Italian</option>
+        <option value="chinese">Chinese</option>
+        <option value="greek">Greek</option>
+        <option value="japanese">Japanese</option>
+        <option value="mexican">Mexican</option>
+        <option value="turkish">Turkish</option>
+        <option value="spanish">Spanish</option>
+        <option value="vietnamese">Vietnamese</option>
+        <option value="thai">Thai</option>
+        <option value="hamberger">Hamberger</option>
+        <option value="sushi">Sushi</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        name="onBoardedWithUs"
+        class="form-check-input"
+        id="onBoradedWithUs"
+      />
+      <label class="form-check-label" for="onBoradedWithUs">Restaurant is
+        onBoarded</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
