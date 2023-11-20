@@ -27,6 +27,12 @@ app.use("/", indexRoutes);
 const restaurantRoutes = require("./routes/restaurant.routes");
 app.use("/restaurants/create", restaurantRoutes);
 
+const signUpRoutes = require("./routes/signup.routes");
+app.use("/auth", signUpRoutes);
+
+const loginRoutes = require("./routes/login.routes");
+app.use("/auth", loginRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
