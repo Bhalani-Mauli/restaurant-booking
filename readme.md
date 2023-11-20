@@ -14,7 +14,7 @@ TBD
 
 ### Git Workdflow diagram:
 
-![git workflow](https://github.com/Bhalani-Mauli/resturant-booking/tree/main/docs/gitWorkflow.png)
+![git workflow](https://raw.githubusercontent.com/Bhalani-Mauli/restaurant-booking/main/docs/gitWorkflow.png)
 
 ### Trello Board:
 
