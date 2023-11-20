@@ -1,7 +1,7 @@
 <div class="mt-5">
-  <h2>Create a restaurant</h2>
+  <h2>Edit a restaurant</h2>
 
-  <form action="/restaurants/create" method="post">
+  <form action="/restaurants/edit/{{id}}" method="post">
     <div class="mb-3">
       <label for="nameInput" class="form-label">Name</label>
       <input
@@ -10,6 +10,7 @@
         id="nameInput"
         name="name"
         aria-describedby="emailHelp"
+        value="{{name}}"
         required
       />
     </div>
@@ -19,6 +20,7 @@
         type="email"
         class="form-control"
         name="email"
+        value="{{email}}"
         id="emailInput"
         required
       />
@@ -30,6 +32,7 @@
         type="text"
         class="form-control"
         name="street"
+        value="{{street}}"
         id="streetInput"
         required
       />
@@ -41,6 +44,7 @@
         type="number"
         class="form-control"
         name="pincode"
+        value="{{pincode}}"
         id="pincodeInput"
         required
       />
@@ -51,6 +55,7 @@
         type="text"
         class="form-control"
         name="city"
+        value="{{city}}"
         id="cityInput"
         required
       />
@@ -62,6 +67,7 @@
         type="number"
         class="form-control"
         name="rating"
+        value="{{rating}}"
         id="ratingInput"
         required
       />
@@ -95,6 +101,7 @@
       <input
         type="checkbox"
         name="restaurantOnBoarded"
+        value="{{restaurantOnBoarded}}"
         class="form-check-input"
         id="onBoradedWithUs"
       />
