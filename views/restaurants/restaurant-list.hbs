@@ -1,0 +1,51 @@
+<div class="mt-5">
+  <h2>Restaurant list</h2>
+  <div class=" d-flex flex-column justify-content-center mt-5" style="max-width: 80%; margin:auto">
+  {{#each restaurants}}
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/{{this.image}}" class="img-fluid rounded-start" alt="..." />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text"><small
+                class="text-body-secondary"
+              >{{this.street}}, {{this.pincode}}, {{this.city}}</small></p>
+
+            <p class="card-text"><div
+                class="text-body-secondary"
+              >{{this.rating}}</div></p>
+            {{#if ../isAdmin}}
+              <a href="/restaurants/edit/{{this.id}}"><button
+                  type="submit"
+                  class="btn btn-primary"
+                >Edit</button></a>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+  <ul class="pagination mb-5 m-auto">
+    <li class="page-item">
+      <a class="page-link" href="?page={{prevPage}}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {{#times pages}}
+      <li class="page-item"><a
+          class="page-link"
+          href="?page={{this}}"
+        >{{this}}</a></li>
+    {{/times}}
+    <li class="page-item">
+      <a class="page-link" href="?page={{nextPage}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+  </div>
+</div>
