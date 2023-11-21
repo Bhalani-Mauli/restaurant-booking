@@ -25,7 +25,10 @@ const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
 const restaurantRoutes = require("./routes/restaurant.routes");
+const restaurantListRoutes = require("./routes/restaurant-list.routes");
+
 app.use("/restaurants", restaurantRoutes);
+app.use("/restaurants/list", restaurantListRoutes);
 
 const signUpRoutes = require("./routes/signup.routes");
 app.use("/auth", signUpRoutes);

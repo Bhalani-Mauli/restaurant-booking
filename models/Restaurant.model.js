@@ -36,10 +36,10 @@ const restaurantSchema = new Schema(
       type: Number,
       required: true,
     },
-    // restaurantOnBoarded: {
-    //   type: String,
-    //   required: false,
-    // },
+    restaurantOnBoarded: {
+      type: String,
+      required: false,
+    },
     image: {
       type: String,
       default: "images/default-restaurantImg.png", // TODO: will handle images later
