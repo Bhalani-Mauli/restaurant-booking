@@ -23,3 +23,36 @@ h1 {
 .rating-color {
   color: #fbc634 !important;
 }
+
+/* ----- dashboard search tab ----- */
+.city-search {
+  margin-top: 5rem;
+  background-color: #34d3fb;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.input-group {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.form-select {
+  color: #5bc0de;
+  background-color: #fff;
+  border: 1px solid #5bc0de;
+  border-radius: 5px;
+}
+
+.input-group-text {
+  background-color: #5cb85c;
+  color: #fff;
+  border: 1px solid #5cb85c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-group-text:hover {
+  background-color: #f4a61f;
+  border: 1px solid #4cae4c;
+}
