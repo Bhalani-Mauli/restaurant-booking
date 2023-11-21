@@ -22,21 +22,17 @@ app.locals.appTitle = `${capitalize(projectName)}`;
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
-app.use("/", indexRoutes);
-
+const loginRoutes = require("./routes/login.routes");
 const restaurantRoutes = require("./routes/restaurant.routes");
 const restaurantListRoutes = require("./routes/restaurant-list.routes");
+const signUpRoutes = require("./routes/signup.routes");
+const dashboardRoutes = require("./routes/dashboard.routes");
 
+app.use("/", indexRoutes);
 app.use("/restaurants", restaurantRoutes);
 app.use("/restaurants/list", restaurantListRoutes);
-
-const signUpRoutes = require("./routes/signup.routes");
 app.use("/auth", signUpRoutes);
-
-const loginRoutes = require("./routes/login.routes");
 app.use("/auth", loginRoutes);
-
-const dashboardRoutes = require("./routes/dashboard.routes");
 app.use("/dashboard", dashboardRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

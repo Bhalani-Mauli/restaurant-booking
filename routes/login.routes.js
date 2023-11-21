@@ -1,9 +1,8 @@
 const { Router } = require("express");
 const router = new Router();
 const bcryptjs = require("bcryptjs");
-const saltRounds = 10;
 const User = require("../models/User.model");
-const mongoose = require("mongoose");
+const saltRounds = 10;
 
 // GET route to display the login form to users
 router.get("/login", (req, res) => res.render("auth/login"));
@@ -29,7 +28,7 @@ router.post("/login", (req, res, next) => {
         return;
       } else if (bcryptjs.compareSync(password, user.passwordHash)) {
         req.session.currentUser = user; //save user in session
-        res.redirect("/userProfile");
+        res.redirect("/dashboard");
       } else {
         console.log("Incorrect password. ");
         res.render("auth/login", {

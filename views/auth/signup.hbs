@@ -8,7 +8,7 @@
         type="name"
         class="form-control"
         id="nameInput"
-        name="name"
+        name="username"
         aria-describedby="emailHelp"
         required
       />
@@ -23,6 +23,7 @@
         id="emailInput"
         required
       />
+    </div>
 
     <div class="mb-3">
       <label for="emailInput" class="form-label">Password</label>
@@ -33,7 +34,10 @@
         id="passwordInput"
         required
       />
-  
+    </div>
     <button type="submit" class="btn btn-primary">Sign Up</button>
   </form>
+  {{#if errorMessage}}
+    <span class="text-danger">{{errorMessage}}</span>
+  {{/if}}
 </div>
