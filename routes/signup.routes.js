@@ -14,7 +14,7 @@ router.post("/signup", (req, res, next) => {
 
   // mandatory fields
   if (!username || !email || !password) {
-    res.render("/signup", {
+    res.render("../views/auth/signup.hbs", {
       errorMessage:
         "All fields are mandatory. Please provide your username, email and password.",
     });
@@ -24,7 +24,7 @@ router.post("/signup", (req, res, next) => {
   // make sure passwords are strong:
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
-    res.status(500).render("/signup", {
+    res.status(500).render("../views/auth/signup.hbs", {
       errorMessage:
         "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.",
     });
@@ -42,17 +42,19 @@ router.post("/signup", (req, res, next) => {
       });
     })
     .then((userFromDB) => {
-      res.redirect("/userProfile");
+      res.render("../views/user/userProfile.hbs"); //TODO: change this when user profile is created
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.status(500).render("/signup", { errorMessage: error.message });
+        res
+          .status(500)
+          .render("../views/auth/signup.hbs", { errorMessage: error.message });
       } else if (error.code === 11000) {
         console.log(
           " Username and email need to be unique. Either username or email is already used. "
         );
 
-        res.status(500).render("/signup", {
+        res.status(500).render("../views/auth/signup.hbs", {
           errorMessage: "User not found and/or incorrect password.",
         });
       } else {

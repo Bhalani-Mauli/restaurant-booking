@@ -3,12 +3,12 @@
 
   <form action="/auth/signup" method="post">
     <div class="mb-3">
-      <label for="nameInput" class="form-label">Name</label>
+      <label for="nameInput" class="form-label">Username</label>
       <input
         type="name"
         class="form-control"
         id="nameInput"
-        name="name"
+        name="username"
         aria-describedby="emailHelp"
         required
       />
@@ -23,6 +23,7 @@
         id="emailInput"
         required
       />
+    </div>
 
     <div class="mb-3">
       <label for="emailInput" class="form-label">Password</label>
@@ -30,10 +31,14 @@
         type="password"
         class="form-control"
         name="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
         id="passwordInput"
         required
       />
-  
+    </div>
     <button type="submit" class="btn btn-primary">Sign Up</button>
   </form>
+  {{#if errorMessage}}
+    <span class="text-danger">{{errorMessage}}</span>
+  {{/if}}
 </div>
