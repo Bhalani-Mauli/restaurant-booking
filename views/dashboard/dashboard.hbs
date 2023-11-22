@@ -1,5 +1,9 @@
 <div class="city-search">
-  <h1>Discover and book the best restaurant.</h1>
+  {{#if userInSession}}
+    <h5>Welcome, {{userInSession.username}}!</h5>
+  {{/if}}
+  <br />
+  <h2>Discover and book the best restaurant.</h2>
   <br />
   <h5>Please choose the city you would like to dine at below.</h5>
 

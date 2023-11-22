@@ -22,32 +22,35 @@ router.post("/login", (req, res, next) => {
     .then((user) => {
       if (!user) {
         console.log("Email not registered. ");
-        res.render("auth/login", {
-          errorMessage: "User not found and/or incorrect password.",
+        res.render("auth/signup", {
+          errorMessage: "Please register first",
         });
         return;
       } else if (bcryptjs.compareSync(password, user.passwordHash)) {
         req.session.currentUser = user; //save user in session
         res.redirect("/dashboard");
       } else {
-        console.log("Incorrect password. ");
+        console.log("Incorrect password!!!");
         res.render("auth/login", {
-          errorMessage: "User not found and/or incorrect password.",
+          errorMessage: "Incorrect password!!!",
         });
       }
     })
     .catch((error) => next(error));
 });
 
-// // require auth middleware
-// const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
+// import auth middleware route
+const { isLoggedIn, isLoggedOut } = require("../middleware/middleware.js");
 
-// // userProfile route
-// router.get("/userProfile", isLoggedIn, (req, res) => {
-//   res.render("users/user-profile", { userInSession: req.session.currentUser });
-// });
+// dashboard route
+router.get("/dashboard", isLoggedIn, (req, res) => {
+  console.log("User in session:", req.session.currentUser);
+  res.render("../dashboard/dashboard.hbs", {
+    userInSession: req.session.currentUser,
+  });
+});
 
-// router.get("/signup", isLoggedOut, (req, res) => res.render("auth/signup"));
+router.get("/login", isLoggedOut, (req, res) => res.render("auth/login"));
 
 router.post("/logout", (req, res, next) => {
   req.session.destroy((err) => {
