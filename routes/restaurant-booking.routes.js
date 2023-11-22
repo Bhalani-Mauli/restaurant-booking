@@ -4,31 +4,29 @@ const Booking = require("../models/Booking.model");
 
 router.get("/:id", (req, res) => {
   const id = req.params.id;
+
   Restaurant.findById(id)
     .then((dbData) => {
       res.render("../views/restaurants/restaurant-booking.hbs", {
         id,
-        // name: dbData.name,
-        // noOfPeople: dbData.noOfPeople,
+        name: dbData.name,
       });
     })
     .catch((error) => console.log(error));
 });
 
-router.post("/dashboard", (req, res) => {
-  const { noOfPeople, date, time, occasion } = req.body;
+router.post("/", (req, res) => {
+  const { numOfPeople, date, time } = req.body;
 
   const newBooking = new Booking({
-    noOfPeople,
+    numOfPeople,
     date,
     time,
-    occasion,
   });
 
   newBooking
     .save()
     .then(() => {
-      // Redirect the user to the dashboard page
       res.redirect("/dashboard");
     })
     .catch((error) => console.log(error));

@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const bookingSchema = new Schema(
   {
-    noOfPeople: {
+    numOfPeople: {
       type: Number,
       required: true,
     },
@@ -11,7 +11,7 @@ const bookingSchema = new Schema(
       required: true,
     },
     time: {
-      type: Number,
+      type: String,
       required: true,
     },
     occasion: {

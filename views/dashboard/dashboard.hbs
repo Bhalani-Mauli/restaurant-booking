@@ -14,7 +14,29 @@
       <option value="2">Frankfurt</option>
       <option value="3">Munich</option>
     </select>
-    <label class="input-group-text" for="inputGroupSelect02">Find</label>
+    <!--TODO: add city name to list route -->
+    <a href="/restaurants/list/"><label
+        class="input-group-text"
+        for="inputGroupSelect02"
+      >Find</label></a>
+
+    <a href="/restaurants/list/">Find</a>
   </div>
 </div>
-<h2>booking table</h2>
+
+<div class="mt-5">
+  <h2 class="mb-4">booking table</h2>
+  <!-- card -->
+  {{#each bookings}}
+    <div class="card w-75 mb-3 mt-2">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">{{this.numOfPeople}}</p>
+        <p class="card-text">{{this.date}}</p>
+        <p class="card-text">{{this.time}}</p>
+        <a href="#" class="btn btn-primary">Cancle</a>
+      </div>
+    </div>
+  {{/each}}
+  <!-- card end -->
+</div>

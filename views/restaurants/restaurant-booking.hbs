@@ -1,14 +1,15 @@
 <div class="mt-5">
   <h2>{{name}}</h2>
 
-  <form action="/dashboard" method="post">
+  <form action="/restaurants/booking/" method="post">
+
     <div class="mb-3">
-      <label for="noOfPeopleInput" class="form-label">No. of People</label>
+      <label for="reservationNumber" class="form-label">No. of People</label>
       <input
         type="number"
         class="form-control"
-        id="nameInput"
-        name="name"
+        id="reservationNumber"
+        name="numOfPeople"
         aria-describedby="emailHelp"
         required
       />
@@ -48,10 +49,6 @@
         <option value="22:00">22:00</option>
       </select>
     </div>
-
-    {{! <button type="submit" class="btn btn-primary">Booking Table</button> }}
-
-    <a href="/dashboard"><button type="submit" class="btn btn-primary">Booking
-        Table</button></a>
+    <button type="submit" class="btn btn-primary">Book Table</button>
   </form>
 </div>
