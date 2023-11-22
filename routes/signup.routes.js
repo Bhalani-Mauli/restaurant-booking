@@ -42,7 +42,8 @@ router.post("/signup", (req, res, next) => {
       });
     })
     .then((userFromDB) => {
-      res.render("../views/user/userProfile.hbs"); //TODO: change this when user profile is created
+      console.log("Newly created user is: ", userFromDB);
+      res.render("../views/auth/login.hbs");
     })
     .catch((error) => {
       if (error instanceof mongoose.Error.ValidationError) {

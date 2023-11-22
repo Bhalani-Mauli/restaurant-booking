@@ -56,3 +56,10 @@ h1 {
   background-color: #f4a61f;
   border: 1px solid #4cae4c;
 }
+
+.home-hero-section {
+  background-color: #1ebd73;
+  text-align: center;
+  padding: 100px;
+  margin: 80px;
+}
