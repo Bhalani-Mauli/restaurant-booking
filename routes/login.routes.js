@@ -4,10 +4,10 @@ const bcryptjs = require("bcryptjs");
 const User = require("../models/User.model");
 const saltRounds = 10;
 
-// GET route to display the login form to users
+/* GET route to display the login form to users */
 router.get("/login", (req, res) => res.render("auth/login"));
 
-// POST login route to process form data
+/* POST login route to process form data */
 router.post("/login", (req, res, next) => {
   const { email, password } = req.body;
 
@@ -37,26 +37,6 @@ router.post("/login", (req, res, next) => {
       }
     })
     .catch((error) => next(error));
-});
-
-// import auth middleware route
-const { isLoggedIn, isLoggedOut } = require("../middleware/middleware.js");
-
-// dashboard route
-router.get("/dashboard", isLoggedIn, (req, res) => {
-  console.log("User in session:", req.session.currentUser);
-  res.render("../dashboard/dashboard.hbs", {
-    userInSession: req.session.currentUser,
-  });
-});
-
-router.get("/login", isLoggedOut, (req, res) => res.render("auth/login"));
-
-router.post("/logout", (req, res, next) => {
-  req.session.destroy((err) => {
-    if (err) next(err);
-    res.redirect("/");
-  });
 });
 
 module.exports = router;
