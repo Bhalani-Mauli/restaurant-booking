@@ -9,11 +9,18 @@ router.get("/", isLoggedIn, (req, res) => {
   Booking.find({
     userEmail: req.session.currentUser.email,
   }).then((bookings) => {
-    res.render("../views/dashboard/dashboard.hbs", {
-      bookings,
-      userInSession: req.session.currentUser,
-      cities,
-    });
+    res.render(
+      "../views/dashboard/dashboard.hbs",
+      // {
+      //   layout: req.session.currentUser ? "layouts/loggedin-layout" : "layout",
+      // },
+      {
+        layout: req.session.currentUser ? "layouts/loggedin-layout" : "layout",
+        bookings,
+        userInSession: req.session.currentUser,
+        cities,
+      }
+    );
   });
 });
 

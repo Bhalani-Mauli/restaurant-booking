@@ -24,6 +24,7 @@ app.locals.appTitle = `${capitalize(projectName)}`;
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 const loginRoutes = require("./routes/login.routes");
+const logoutRoutes = require("./routes/logout.routes");
 const restaurantRoutes = require("./routes/restaurant.routes");
 const restaurantListRoutes = require("./routes/restaurant-list.routes");
 const signUpRoutes = require("./routes/signup.routes");
@@ -35,6 +36,7 @@ app.use("/restaurants", restaurantRoutes);
 app.use("/restaurants/list", restaurantListRoutes);
 app.use("/auth", signUpRoutes);
 app.use("/auth", loginRoutes);
+app.use("/auth", logoutRoutes);
 app.use("/restaurants/booking", restaurantBookingRoutes);
 app.use("/dashboard", dashboardRoutes);
 
