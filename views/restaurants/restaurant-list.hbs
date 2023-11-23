@@ -9,7 +9,12 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{this.name}}</h5>
+            {{!-- <h5 class="card-title">{{this.name}}</h5> --}}
+            <h3>{{#if this.id}}
+              <a href="/restaurants/details/{{this.id}}">{{this.name}}</a>
+              {{else}}
+               {{this.name}}
+              {{/if}}</h3>
             <p class="card-text"><small
                 class="text-body-secondary"
               >{{this.street}}, {{this.pincode}}, {{this.city}}</small></p>
