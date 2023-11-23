@@ -93,16 +93,21 @@
     </div>
 
     <div class="mb-3">
-      <label>Image:
-        <input id="image" type="file" name="image" class="form-control-file" />
-        <input
-          id="image"
-          type="text"
-          name="existingImage"
-          hidden
-          value="{{this.image}}"
-        />
-      </label>
+      <label for="image" class="form-label">Image</label>
+      <input
+        id="image"
+        type="file"
+        class="form-control"
+        name="image"
+        value="{{this.image}}"
+      />
+      <input
+        id="image"
+        type="text"
+        name="existingImage"
+        hidden
+        value="{{this.image}}"
+      />
     </div>
 
     <div class="mb-3">

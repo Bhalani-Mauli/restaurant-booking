@@ -5,7 +5,6 @@ router.get("/:id", (req, res) => {
   const id = req.params.id;
   Restaurant.findById(id)
     .then((dbData) => {
-      console.log(dbData);
       res.render("../views/restaurants/restaurant-details.hbs", {
         id,
         name: dbData.name,
