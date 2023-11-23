@@ -13,7 +13,7 @@ app.use(
 const isLoggedIn = (req, res, next) => {
   // check if the user is logged in
   if (!req.session.currentUser) {
-    return res.redirect("/login");
+    return res.redirect("/auth/login");
   }
   next();
 };

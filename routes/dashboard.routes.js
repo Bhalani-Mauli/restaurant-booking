@@ -1,13 +1,19 @@
 const express = require("express");
 const router = express.Router();
-
-/* Import auth middleware route */
-const { isLoggedIn, isLoggedOut } = require("../middleware/middleware.js");
+const Booking = require("../models/Booking.model");
+const { isLoggedIn } = require("../middleware/middleware.js");
+const cities = require("../constants/cities");
 
 /* GET dashboard route */
 router.get("/", isLoggedIn, (req, res) => {
-  res.render("dashboard/dashboard.hbs", {
-    userInSession: req.session.currentUser,
+  Booking.find({
+    userEmail: req.session.currentUser.email,
+  }).then((bookings) => {
+    res.render("../views/dashboard/dashboard.hbs", {
+      bookings,
+      userInSession: req.session.currentUser,
+      cities,
+    });
   });
 });
 
