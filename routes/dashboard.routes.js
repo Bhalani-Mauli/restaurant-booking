@@ -17,4 +17,14 @@ router.get("/", isLoggedIn, (req, res) => {
   });
 });
 
+router.post("/:id", isLoggedIn, (req, res, next) => {
+  const { id } = req.params;
+
+  Booking.findByIdAndDelete(id)
+    .then(() => {
+      res.redirect("/dashboard");
+    })
+    .catch((error) => next(error));
+});
+
 module.exports = router;

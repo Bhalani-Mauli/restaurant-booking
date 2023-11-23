@@ -31,7 +31,10 @@
         <p class="card-text">Date: {{this.date}}</p>
         <p class="card-text">Time: {{this.time}}</p>
         {{! //cancle }}
-        <button>Cancle</button>
+        <form action="/dashboard/{{this.id}}" method="POST">
+          <input type="hidden" name="_method" value="DELETE" />
+          <button type="submit" class="btn btn-primary">Cancel</button>
+        </form>
       </div>
     </div>
   {{/each}}
