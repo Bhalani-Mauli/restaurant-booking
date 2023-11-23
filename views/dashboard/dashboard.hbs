@@ -8,12 +8,31 @@
   <h5>Please choose the city you would like to dine at below.</h5>
 
   <div class="input-group mb-3">
-    <select class="form-select" id="inputGroupSelect02">
-      <option selected>Berlin</option>
-      <option value="1">Hamburg</option>
-      <option value="2">Frankfurt</option>
-      <option value="3">Munich</option>
+    <select class="form-select">
+      {{#each cities}}
+        <option value="{{@index}}">{{this}}</option>
+      {{/each}}
     </select>
-    <label class="input-group-text" for="inputGroupSelect02">Find</label>
+    <!--TODO: add city name to list route -->
+    <a href="/restaurants/list/"><label
+        class="input-group-text"
+      >Find</label></a>
   </div>
+</div>
+
+<div class="mt-5">
+  <h2 class="mb-4">booking table</h2>
+  <!-- card -->
+  {{#each bookings}}
+    <div class="card w-75 mb-3 mt-2">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">{{this.numOfPeople}}</p>
+        <p class="card-text">{{this.date}}</p>
+        <p class="card-text">{{this.time}}</p>
+        <a href="#" class="btn btn-primary">Cancle</a>
+      </div>
+    </div>
+  {{/each}}
+  <!-- card end -->
 </div>

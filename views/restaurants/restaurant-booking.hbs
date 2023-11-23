@@ -1,0 +1,52 @@
+<div class="mt-5">
+  <h2>{{name}}</h2>
+
+  <form action="/restaurants/booking/" method="post">
+
+    <div class="mb-3">
+      <label for="reservationNumber" class="form-label">No. of People</label>
+      <input
+        type="number"
+        class="form-control"
+        id="reservationNumber"
+        name="numOfPeople"
+        aria-describedby="emailHelp"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="dateInput" class="form-label">Date</label>
+      <div class="input-group date" data-provide="datepicker">
+        <input
+          type="date"
+          class="form-control"
+          id="dateInput"
+          name="date"
+          placeholder="Please enter date"
+          required
+        />
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="time" class="form-label">Time</label>
+      <select class="form-select" name="time" aria-label="Choose Time" required>
+        <option selected>Choose Time</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="18:30">18:30</option>
+        <option value="19:00">19:00</option>
+        <option value="19:30">19:30</option>
+        <option value="20:00">20:00</option>
+        <option value="20:30">20:30</option>
+        <option value="21:00">21:00</option>
+        <option value="21:30">21:30</option>
+        <option value="22:00">22:00</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Book Table</button>
+  </form>
+</div>

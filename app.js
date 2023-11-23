@@ -28,12 +28,14 @@ const restaurantRoutes = require("./routes/restaurant.routes");
 const restaurantListRoutes = require("./routes/restaurant-list.routes");
 const signUpRoutes = require("./routes/signup.routes");
 const dashboardRoutes = require("./routes/dashboard.routes");
+const restaurantBookingRoutes = require("./routes/restaurant-booking.routes");
 
 app.use("/", indexRoutes);
 app.use("/restaurants", restaurantRoutes);
 app.use("/restaurants/list", restaurantListRoutes);
 app.use("/auth", signUpRoutes);
 app.use("/auth", loginRoutes);
+app.use("/restaurants/booking", restaurantBookingRoutes);
 app.use("/dashboard", dashboardRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

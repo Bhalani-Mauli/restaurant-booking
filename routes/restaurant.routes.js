@@ -1,11 +1,12 @@
 const router = require("express").Router();
 const Restaurant = require("../models/Restaurant.model");
+const { isLoggedIn } = require("../middleware/middleware.js");
 
-router.get("/create", (req, res) =>
+router.get("/create", isLoggedIn, (req, res) =>
   res.render("../views/restaurants/restaurant-create.hbs")
 );
 
-router.post("/create", (req, res, next) => {
+router.post("/create", isLoggedIn, (req, res, next) => {
   const {
     name,
     email,
@@ -37,7 +38,7 @@ router.post("/create", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.get("/edit/:id", (req, res) => {
+router.get("/edit/:id", isLoggedIn, (req, res) => {
   const id = req.params.id;
   Restaurant.findById(id)
     .then((dbData) => {
@@ -56,7 +57,7 @@ router.get("/edit/:id", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.post("/edit/:id", (req, res, next) => {
+router.post("/edit/:id", isLoggedIn, (req, res, next) => {
   const { id } = req.params;
 
   const {
