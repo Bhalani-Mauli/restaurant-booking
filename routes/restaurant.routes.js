@@ -1,12 +1,13 @@
 const router = require("express").Router();
 const Restaurant = require("../models/Restaurant.model");
 const { isLoggedIn } = require("../middleware/middleware.js");
+const fileUploader = require("../config/cloudinary.config");
 
 router.get("/create", isLoggedIn, (req, res) =>
   res.render("../views/restaurants/restaurant-create.hbs")
 );
 
-router.post("/create", isLoggedIn, (req, res, next) => {
+router.post("/create", fileUploader.single("image"), (req, res, next) => {
   const {
     name,
     email,
@@ -20,7 +21,8 @@ router.post("/create", isLoggedIn, (req, res, next) => {
     image,
     restaurantOnBoarded,
   } = req.body;
-  Restaurant.create({
+
+  const reqBody = {
     name,
     email,
     street,
@@ -30,14 +32,16 @@ router.post("/create", isLoggedIn, (req, res, next) => {
     closingTime,
     typeOfCuisine,
     rating,
-    image,
     restaurantOnBoarded,
-  })
+  };
+
+  if (req.file?.path) {
+    reqBody.image = req.file.path;
+  }
+  Restaurant.create(reqBody)
     .then((dbRestaurant) => {
       //TODO: redirect to proper page
-      res.send(
-        "<h2>Data saved successfully.TODO: create a new page for restaurant/id</h2>"
-      );
+      res.redirect("/dashboard");
     })
     .catch((error) => next(error));
 });
