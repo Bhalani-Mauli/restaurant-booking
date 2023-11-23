@@ -2,6 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const bookingSchema = new Schema(
   {
+    restaurantName: String,
     numOfPeople: {
       type: Number,
       required: true,

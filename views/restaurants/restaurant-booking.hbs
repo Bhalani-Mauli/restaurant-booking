@@ -1,8 +1,8 @@
 <div class="mt-5">
   <h2>{{name}}</h2>
 
-  <form action="/restaurants/booking/" method="post">
-
+  <form action="/restaurants/booking" method="post">
+    <input id="restaurantName" name="restaurantName" value="{{name}}" hidden />
     <div class="mb-3">
       <label for="reservationNumber" class="form-label">No. of People</label>
       <input
