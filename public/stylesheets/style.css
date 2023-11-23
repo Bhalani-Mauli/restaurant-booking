@@ -24,42 +24,46 @@ h1 {
   color: #fbc634 !important;
 }
 
+/* ------ home page ----- */
+.home-hero-section {
+  background-color: #00b894;
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+}
+
+.home-hero-section h1 {
+  margin-top: 100px;
+  color: #2c3e50;
+}
+
+.home-hero-section h4 {
+  margin-bottom: 80px;
+  color: #2c3e50;
+}
+
 /* ----- dashboard search tab ----- */
 .city-search {
-  margin-top: 5rem;
   background-color: #34d3fb;
   padding: 50px;
-  border-radius: 10px;
+  margin: 20px;
+  border-radius: 30px;
 }
 
-.input-group {
-  max-width: 300px;
-  margin-bottom: 20px;
+.city-search .input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 50%;
 }
 
-.form-select {
-  color: #5bc0de;
-  background-color: #fff;
-  border: 1px solid #5bc0de;
-  border-radius: 5px;
-}
+/* ----- form ----- */
 
-.input-group-text {
-  background-color: #5cb85c;
-  color: #fff;
-  border: 1px solid #5cb85c;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.input-group-text:hover {
-  background-color: #f4a61f;
-  border: 1px solid #4cae4c;
-}
-
-.home-hero-section {
-  background-color: #1ebd73;
-  text-align: center;
-  padding: 100px;
-  margin: 80px;
+.mt-5 {
+  width: 50%;
+  margin: 20px;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: #d98880;
 }

@@ -18,6 +18,7 @@ router.get("/", (req, res, next) => {
       const nextPage = Math.min(totalPages - 1, page + 1);
       const isAdmin = true; //TODO: change this when login and signup is done
       res.render("restaurants/restaurant-list.hbs", {
+        layout: req.session.currentUser ? "layouts/loggedin-layout" : "layout",
         restaurants: allrestaurantsFromDB,
         page: page,
         pages: totalPages,
