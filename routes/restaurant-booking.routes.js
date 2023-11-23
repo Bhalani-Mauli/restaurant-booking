@@ -17,10 +17,12 @@ router.get("/:id", isLoggedIn, (req, res) => {
 });
 
 router.post("/", isLoggedIn, (req, res) => {
-  const { numOfPeople, date, time } = req.body;
+  const { restaurantName, numOfPeople, date, time } = req.body;
+  // return res.send(req.body);
   const userEmail = req.session.currentUser.email;
 
   const newBooking = new Booking({
+    restaurantName,
     numOfPeople,
     date,
     time,
