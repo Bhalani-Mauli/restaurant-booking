@@ -48,7 +48,7 @@ const restaurantSchema = new Schema(
     },
     image: {
       type: String,
-      default: "images/default-restaurantImg.png", // TODO: will handle images later
+      default: "/images/default-restaurantImg.png", // TODO: will handle images later
     },
   },
   {

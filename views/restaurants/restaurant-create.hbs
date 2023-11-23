@@ -1,7 +1,11 @@
 <div class="mt-5">
   <h2>Create a restaurant</h2>
 
-  <form action="/restaurants/create" method="post">
+  <form
+    action="/restaurants/create"
+    method="post"
+    enctype="multipart/form-data"
+  >
     <div class="mb-3">
       <label for="nameInput" class="form-label">Name</label>
       <input
@@ -86,6 +90,19 @@
         name="closingTime"
         value="2017-06-01T08:30"
       />
+    </div>
+
+    <div class="mb-3">
+      <label>Image:
+        <input id="image" type="file" name="image" class="form-control-file" />
+        <input
+          id="image"
+          type="text"
+          name="existingImage"
+          hidden
+          value="{{this.image}}"
+        />
+      </label>
     </div>
 
     <div class="mb-3">
