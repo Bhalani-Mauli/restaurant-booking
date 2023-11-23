@@ -28,6 +28,12 @@ const restaurantSchema = new Schema(
       required: true,
       trim: true,
     },
+    openingTime: {
+      type: String,
+    },
+    closingTime: {
+      type: String,
+    },
     typeOfCuisine: {
       type: String,
       required: true,

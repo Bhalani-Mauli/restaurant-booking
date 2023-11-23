@@ -21,15 +21,15 @@
 </div>
 
 <div class="mt-5">
-  <h2 class="mb-4">booking table</h2>
+  <h2 class="mb-4">Booking table</h2>
   <!-- card -->
   {{#each bookings}}
     <div class="card w-75 mb-3 mt-2">
       <div class="card-body">
-        <h5 class="card-title">{{this.name}}</h5>
-        <p class="card-text">{{this.numOfPeople}}</p>
-        <p class="card-text">{{this.date}}</p>
-        <p class="card-text">{{this.time}}</p>
+        <h5 class="card-title"> {{this.name}}</h5>
+        <p class="card-text">No. of People: {{this.numOfPeople}}</p>
+        <p class="card-text">Date: {{this.date}}</p>
+        <p class="card-text">Time: {{this.time}}</p>
         <a href="#" class="btn btn-primary">Cancle</a>
       </div>
     </div>
