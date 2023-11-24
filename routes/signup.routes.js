@@ -42,7 +42,6 @@ router.post("/signup", (req, res, next) => {
       });
     })
     .then((userFromDB) => {
-      console.log("Newly created user is: ", userFromDB);
       res.render("../views/auth/login.hbs");
     })
     .catch((error) => {
