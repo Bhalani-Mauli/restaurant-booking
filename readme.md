@@ -48,6 +48,11 @@ We have a folder structure defined in a way so that we can put different things 
 - utils
 - views
 
+### LIVE Deployment:
+
+- We have deployed it using [render](https://render.com/) .
+- URL is : https://restaurant-booking-hn0o.onrender.com/
+
 ### Git Workdflow diagram:
 
 ![git workflow](https://raw.githubusercontent.com/Bhalani-Mauli/restaurant-booking/main/docs/gitWorkflow.png)
