@@ -98,7 +98,7 @@ router.post("/edit/:id", isLoggedIn, (req, res, next) => {
     { new: true }
   )
     .then((dbRestaurant) => {
-      res.send("<h2>Data Updated successfully.");
+      res.redirect("/restaurants/list/");
     })
     .catch((error) => next(error));
 });
