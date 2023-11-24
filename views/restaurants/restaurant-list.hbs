@@ -1,17 +1,14 @@
-<div class="mt-5">
-  <h2>Restaurant list</h2>
-  <div class=" d-flex flex-column justify-content-center mt-5" style="max-width: 80%; margin:auto">
+<div>
+  <div class="mt-5">
+    <h2>Restaurant list</h2>
   {{#each restaurants}}
     <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
-         
           <img src="{{this.image}}" class="img-fluid rounded-start" alt="..." />
-          
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            {{!-- <h5 class="card-title">{{this.name}}</h5> --}}
             <h3>{{#if this.id}}
               <a href="/restaurants/details/{{this.id}}">{{this.name}}</a>
               {{else}}
@@ -40,7 +37,7 @@
     </div>
   {{/each}}
 
-  <ul class="pagination mb-5 m-auto">
+  <ul class="pagination mb-5 d-flex justify-content-center">
     <li class="page-item">
       <a class="page-link" href="?page={{prevPage}}" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>

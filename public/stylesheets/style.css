@@ -24,42 +24,52 @@ h1 {
   color: #fbc634 !important;
 }
 
-/* ----- dashboard search tab ----- */
-.city-search {
-  margin-top: 5rem;
-  background-color: #34d3fb;
-  padding: 50px;
-  border-radius: 10px;
-}
-
-.input-group {
-  max-width: 300px;
-  margin-bottom: 20px;
-}
-
-.form-select {
-  color: #5bc0de;
-  background-color: #fff;
-  border: 1px solid #5bc0de;
-  border-radius: 5px;
-}
-
-.input-group-text {
-  background-color: #5cb85c;
-  color: #fff;
-  border: 1px solid #5cb85c;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.input-group-text:hover {
-  background-color: #f4a61f;
-  border: 1px solid #4cae4c;
+/* ------ home page ----- */
+.login-banner {
+  background-color: #5ad5d9b5;
+  padding: 10px 20px !important;
+  margin-top: 130px;
 }
 
 .home-hero-section {
-  background-color: #1ebd73;
+  background: url("https://images.unsplash.com/photo-1505935428862-770b6f24f629?q=80&w=3267&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  border-radius: 10px;
   text-align: center;
-  padding: 100px;
-  margin: 80px;
+  width: auto;
+}
+
+.home-hero-section h1 {
+  margin-top: 100px;
+  color: #2c3e50;
+}
+
+.home-hero-section h4 {
+  margin-bottom: 80px;
+  color: #2c3e50;
+}
+
+/* ----- dashboard search tab ----- */
+.city-search {
+  background-color: #34d3fb;
+  padding: 50px;
+  margin: 20px;
+  border-radius: 30px;
+}
+
+.city-search .input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 50%;
+}
+
+/* ----- form ----- */
+.mt-5 {
+  margin: 20px;
+  padding: 50px;
+  border-radius: 20px;
+  background-color: #f8e8e2;
+  width: auto;
 }

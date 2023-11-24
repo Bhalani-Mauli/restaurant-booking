@@ -7,6 +7,7 @@ router.get("/:id", (req, res) => {
     .then((dbData) => {
       console.log(dbData);
       res.render("../views/restaurants/restaurant-details.hbs", {
+        layout: req.session.currentUser ? "layouts/loggedin-layout" : "layout",
         id,
         name: dbData.name,
         typeOfCuisine: dbData.typeOfCuisine,

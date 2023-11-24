@@ -9,6 +9,7 @@ router.get("/:id", isLoggedIn, (req, res) => {
   Restaurant.findById(id)
     .then((dbData) => {
       res.render("../views/restaurants/restaurant-booking.hbs", {
+        layout: req.session.currentUser ? "layouts/loggedin-layout" : "layout",
         id,
         name: dbData.name,
       });

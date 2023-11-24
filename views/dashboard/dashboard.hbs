@@ -1,6 +1,6 @@
 <div class="city-search">
   {{#if userInSession}}
-    <h5>Welcome, {{userInSession.username}}!</h5>
+    <h4>Welcome, {{userInSession.username}}!</h4>
   {{/if}}
   <br />
   <h2>Discover and book the best restaurant.</h2>
@@ -24,17 +24,18 @@
   <h2 class="mb-4">Booking table</h2>
   <!-- card -->
   {{#each bookings}}
-    <div class="card w-75 mb-3 mt-2">
-      <div class="card-body">
-        <h5 class="card-title"> {{this.restaurantName}}</h5>
-        <p class="card-text">No. of People: {{this.numOfPeople}}</p>
-        <p class="card-text">Date: {{this.date}}</p>
-        <p class="card-text">Time: {{this.time}}</p>
-        {{! //cancle }}
-        <form action="/dashboard/{{this.id}}" method="POST">
-          <input type="hidden" name="_method" value="DELETE" />
-          <button type="submit" class="btn btn-primary">Cancel</button>
-        </form>
+    <div class="d-flex justify-content-center">
+      <div class="card w-75 mb-3 mt-2">
+        <div class="card-body">
+          <h5 class="card-title"> {{this.restaurantName}}</h5>
+          <p class="card-text">No. of People: {{this.numOfPeople}}</p>
+          <p class="card-text">Date: {{this.date}}</p>
+          <p class="card-text">Time: {{this.time}}</p>
+          <form action="/dashboard/{{this.id}}" method="POST">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="btn btn-primary">Cancel</button>
+          </form>
+        </div>
       </div>
     </div>
   {{/each}}

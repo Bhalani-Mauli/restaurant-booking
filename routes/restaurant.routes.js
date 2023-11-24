@@ -4,7 +4,9 @@ const { isLoggedIn } = require("../middleware/middleware.js");
 const fileUploader = require("../config/cloudinary.config");
 
 router.get("/create", isLoggedIn, (req, res) =>
-  res.render("../views/restaurants/restaurant-create.hbs")
+  res.render("../views/restaurants/restaurant-create.hbs", {
+    layout: req.session.currentUser ? "layouts/loggedin-layout" : "layout",
+  })
 );
 
 router.post("/create", fileUploader.single("image"), (req, res, next) => {
@@ -96,7 +98,7 @@ router.post("/edit/:id", isLoggedIn, (req, res, next) => {
     { new: true }
   )
     .then((dbRestaurant) => {
-      res.send("<h2>Data Updated successfully.");
+      res.redirect("/restaurants/list/");
     })
     .catch((error) => next(error));
 });
